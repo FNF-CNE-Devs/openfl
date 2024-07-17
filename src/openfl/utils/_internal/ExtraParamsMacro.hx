@@ -9,6 +9,8 @@ class ExtraParamsMacro
 {
 	public static function include():Void
 	{
+		Compiler.define("CNE_OPENFL");
+
 		if (!Context.defined("tools"))
 		{
 			if (Context.defined("display"))

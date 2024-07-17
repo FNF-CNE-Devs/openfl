@@ -219,13 +219,17 @@ import js.Browser;
 		another SWF file is loaded later, the return value is relative to when the first
 		SWF file was loaded.
 	**/
-	public static function getTimer():Int
+	public static function getTimer():Float
 	{
 		#if lime
 		#if flash
-		return flash.Lib.getTimer();
+		return cast flash.Lib.getTimer();
 		#else
-		return System.getTimer();
+		#if CNE_LIME
+		return lime.system.Tools.getAccurateTimer();
+		#else
+		return cast System.getTimer();
+		#end
 		#end
 		#else
 		return 0;
