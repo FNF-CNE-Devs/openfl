@@ -114,7 +114,7 @@ class Matrix
 	public var ty:Float;
 
 	#if lime
-	@:noCompletion private var __array:Float32Array;
+	// @:noCompletion private var __array:Float32Array;
 	#end
 
 	/**
@@ -702,10 +702,11 @@ class Matrix
 	#if lime
 	@:noCompletion private function toArray(transpose:Bool = false):Float32Array
 	{
-		if (__array == null)
-		{
-			__array = new Float32Array(9);
-		}
+		var __array = new Float32Array(9);
+		// if (__array == null)
+		// {
+		//	__array = new Float32Array(9);
+		// }
 
 		if (transpose)
 		{
