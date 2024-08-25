@@ -262,7 +262,7 @@ class Rectangle
 		@return A value of `true` if the Rectangle object contains the
 				specified point; otherwise `false`.
 	**/
-	public function containsPoint(point:Point):Bool
+	public inline function containsPoint(point:Point):Bool
 	{
 		return contains(point.x, point.y);
 	}
@@ -296,7 +296,7 @@ class Rectangle
 
 		@param	sourceRect	The Rectangle object from which to copy the data.
 	**/
-	public function copyFrom(sourceRect:Rectangle):Void
+	public inline function copyFrom(sourceRect:Rectangle):Void
 	{
 		x = sourceRect.x;
 		y = sourceRect.y;
@@ -376,7 +376,7 @@ class Rectangle
 					 property is used to increase the vertical dimension of
 					 the Rectangle object.
 	**/
-	public function inflatePoint(point:Point):Void
+	public inline function inflatePoint(point:Point):Void
 	{
 		inflate(point.x, point.y);
 	}
@@ -452,7 +452,7 @@ class Rectangle
 		@return A value of `true` if the Rectangle object's width or
 				height is less than or equal to 0; otherwise `false`.
 	**/
-	public function isEmpty():Bool
+	public inline function isEmpty():Bool
 	{
 		return (width <= 0 || height <= 0);
 	}
@@ -464,7 +464,7 @@ class Rectangle
 		@param dx Moves the _x_ value of the Rectangle object by this amount.
 		@param dy Moves the _y_ value of the Rectangle object by this amount.
 	**/
-	public function offset(dx:Float, dy:Float):Void
+	public inline function offset(dx:Float, dy:Float):Void
 	{
 		x += dx;
 		y += dy;
@@ -477,7 +477,7 @@ class Rectangle
 
 		@param point A Point object to use to offset this Rectangle object.
 	**/
-	public function offsetPoint(point:Point):Void
+	public inline function offsetPoint(point:Point):Void
 	{
 		x += point.x;
 		y += point.y;
@@ -491,7 +491,7 @@ class Rectangle
 		`width`, and `height` properties to 0.
 
 	**/
-	public function setEmpty():Void
+	public inline function setEmpty():Void
 	{
 		x = y = width = height = 0;
 	}
@@ -504,7 +504,7 @@ class Rectangle
 		@param	widtha
 		@param	heighta
 	**/
-	public function setTo(xa:Float, ya:Float, widtha:Float, heighta:Float):Void
+	public inline function setTo(xa:Float, ya:Float, widtha:Float, heighta:Float):Void
 	{
 		x = xa;
 		y = ya;

@@ -43,12 +43,11 @@ class ObjectPool<T>
 
 	public function add(object:T):Void
 	{
-		if (!__pool.exists(object))
-		{
-			__pool.set(object, false);
-			clean(object);
-			__addInactive(object);
-		}
+		if (__pool.exists(object)) return;
+
+		__pool.set(object, false);
+		clean(object);
+		__addInactive(object);
 	}
 
 	public dynamic function clean(object:T):Void {}
@@ -94,7 +93,7 @@ class ObjectPool<T>
 
 	public function release(object:T):Void
 	{
-		#if debug
+		#if lime_pool_debug
 		if (!__pool.exists(object))
 		{
 			Log.error("Object is not a member of the pool");
@@ -120,34 +119,32 @@ class ObjectPool<T>
 
 	public function remove(object:T):Void
 	{
-		if (__pool.exists(object))
-		{
-			__pool.remove(object);
+		if (!__pool.exists(object)) return;
+		__pool.remove(object);
 
-			if (__inactiveObject0 == object)
-			{
-				__inactiveObject0 = null;
-				inactiveObjects--;
-			}
-			else if (__inactiveObject1 == object)
-			{
-				__inactiveObject1 = null;
-				inactiveObjects--;
-			}
-			else if (__inactiveObjectList.remove(object))
-			{
-				inactiveObjects--;
-			}
-			else
-			{
-				activeObjects--;
-			}
+		if (__inactiveObject0 == object)
+		{
+			__inactiveObject0 = null;
+			inactiveObjects--;
+		}
+		else if (__inactiveObject1 == object)
+		{
+			__inactiveObject1 = null;
+			inactiveObjects--;
+		}
+		else if (__inactiveObjectList.remove(object))
+		{
+			inactiveObjects--;
+		}
+		else
+		{
+			activeObjects--;
 		}
 	}
 
 	@:noCompletion private inline function __addInactive(object:T):Void
 	{
-		#if debug
+		#if lime_pool_debug
 		__pool.set(object, false);
 		#end
 
@@ -196,7 +193,7 @@ class ObjectPool<T>
 			}
 		}
 
-		#if debug
+		#if lime_pool_debug
 		__pool.set(object, true);
 		#end
 
