@@ -4,6 +4,10 @@ package openfl;
 #if (!openfljs || !js)
 import haxe.Constraints.Function;
 
+#if cpp
+using cpp.NativeArray;
+#end
+
 /**
 	The Vector class lets you access and manipulate a vector — an array whose elements
 	all have the same data type. The data type of a Vector's elements is known as the
@@ -932,27 +936,28 @@ abstract Vector<T>(IVector<T>)
 	{
 		if (!fixed)
 		{
-			#if cpp
-			cpp.NativeArray.setSize(__array, value);
-			#else
-			var currentLength = __array.length;
-			if (value < 0) value = 0;
+			__array.resize(value);
+			/*#if cpp
+				cpp.NativeArray.setSize(__array, value);
+				#else
+				var currentLength = __array.length;
+				if (value < 0) value = 0;
 
-			if (value > currentLength)
-			{
-				for (i in currentLength...value)
+				if (value > currentLength)
 				{
-					__array[i] = false;
+					for (i in currentLength...value)
+					{
+						__array[i] = false;
+					}
 				}
-			}
-			else
-			{
-				while (__array.length > value)
+				else
 				{
-					__array.pop();
+					while (__array.length > value)
+					{
+						__array.pop();
+					}
 				}
-			}
-			#end
+				#end */
 		}
 
 		return __array.length;
@@ -1184,34 +1189,36 @@ abstract Vector<T>(IVector<T>)
 	{
 		if (value != __array.length && !fixed)
 		{
-			#if cpp
-			if (value > __array.length)
-			{
-				cpp.NativeArray.setSize(__array, value);
-			}
-			else
-			{
-				__array.splice(value, __array.length);
-			}
-			#else
-			var currentLength = __array.length;
-			if (value < 0) value = 0;
+			__array.resize(value);
+			/*
+				#if cpp
+				if (value > __array.length)
+				{
+					cpp.NativeArray.setSize(__array, value);
+				}
+				else
+				{
+					__array.splice(value, __array.length);
+				}
+				#else
+				var currentLength = __array.length;
+				if (value < 0) value = 0;
 
-			if (value > currentLength)
-			{
-				for (i in currentLength...value)
+				if (value > currentLength)
 				{
-					__array[i] = 0;
+					for (i in currentLength...value)
+					{
+						__array[i] = 0;
+					}
 				}
-			}
-			else
-			{
-				while (__array.length > value)
+				else
 				{
-					__array.pop();
+					while (__array.length > value)
+					{
+						__array.pop();
+					}
 				}
-			}
-			#end
+				#end */
 		}
 
 		return __array.length;
@@ -1441,27 +1448,29 @@ abstract Vector<T>(IVector<T>)
 	{
 		if (!fixed)
 		{
-			#if cpp
-			cpp.NativeArray.setSize(__array, value);
-			#else
-			var currentLength = __array.length;
-			if (value < 0) value = 0;
+			__array.resize(value);
+			/*
+				#if cpp
+				cpp.NativeArray.setSize(__array, value);
+				#else
+				var currentLength = __array.length;
+				if (value < 0) value = 0;
 
-			if (value > currentLength)
-			{
-				for (i in currentLength...value)
+				if (value > currentLength)
 				{
-					__array[i] = null;
+					for (i in currentLength...value)
+					{
+						__array[i] = null;
+					}
 				}
-			}
-			else
-			{
-				while (__array.length > value)
+				else
 				{
-					__array.pop();
+					while (__array.length > value)
+					{
+						__array.pop();
+					}
 				}
-			}
-			#end
+				#end */
 		}
 
 		return __array.length;
@@ -1684,27 +1693,30 @@ abstract Vector<T>(IVector<T>)
 	{
 		if (!fixed)
 		{
-			#if cpp
-			cpp.NativeArray.setSize(__array, value);
-			#else
-			var currentLength = __array.length;
-			if (value < 0) value = 0;
+			__array.resize(value);
+			/*
+				#if cpp
+				cpp.NativeArray.setSize(__array, value);
+				#else
+				var currentLength = __array.length;
+				if (value < 0) value = 0;
 
-			if (value > currentLength)
-			{
-				for (i in currentLength...value)
+				if (value > currentLength)
 				{
-					__array[i] = 0;
+					for (i in currentLength...value)
+					{
+						__array[i] = 0;
+					}
 				}
-			}
-			else
-			{
-				while (__array.length > value)
+				else
 				{
-					__array.pop();
+					while (__array.length > value)
+					{
+						__array.pop();
+					}
 				}
-			}
-			#end
+				#end
+			 */
 		}
 
 		return __array.length;
@@ -1937,27 +1949,30 @@ abstract Vector<T>(IVector<T>)
 	{
 		if (!fixed)
 		{
-			#if cpp
-			cpp.NativeArray.setSize(__array, value);
-			#else
-			var currentLength = __array.length;
-			if (value < 0) value = 0;
+			__array.resize(value);
+			/*
+				#if cpp
+				cpp.NativeArray.setSize(__array, value);
+				#else
+				var currentLength = __array.length;
+				if (value < 0) value = 0;
 
-			if (value > currentLength)
-			{
-				for (i in currentLength...value)
+				if (value > currentLength)
 				{
-					__array.push(null);
+					for (i in currentLength...value)
+					{
+						__array.push(null);
+					}
 				}
-			}
-			else
-			{
-				while (__array.length > value)
+				else
 				{
-					__array.pop();
+					while (__array.length > value)
+					{
+						__array.pop();
+					}
 				}
-			}
-			#end
+				#end
+			 */
 		}
 
 		return __array.length;

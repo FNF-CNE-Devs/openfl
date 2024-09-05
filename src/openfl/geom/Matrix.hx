@@ -693,7 +693,7 @@ class Matrix
 				  pixels.
 		@param dy The amount of movement down along the _y_ axis, in pixels.
 	**/
-	public function translate(dx:Float, dy:Float):Void
+	public inline function translate(dx:Float, dy:Float):Void
 	{
 		tx += dx;
 		ty += dy;
