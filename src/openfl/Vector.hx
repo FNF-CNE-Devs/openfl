@@ -376,6 +376,21 @@ abstract Vector<T>(IVector<T>)
 		return this.push(value);
 	}
 
+	public inline function push2(value1:T, value2:T):Int
+		return this.push2(value1, value2);
+
+	public inline function push3(value1:T, value2:T, value3:T):Int
+		return this.push3(value1, value2, value3);
+
+	public inline function push4(value1:T, value2:T, value3:T, value4:T):Int
+		return this.push4(value1, value2, value3, value4);
+
+	public inline function push5(value1:T, value2:T, value3:T, value4:T, value5:T):Int
+		return this.push5(value1, value2, value3, value4, value5);
+
+	public inline function push6(value1:T, value2:T, value3:T, value4:T, value5:T, value6:T):Int
+		return this.push6(value1, value2, value3, value4, value5, value6);
+
 	/**
 		Remove a single element from the Vector. This method modifies the Vector without
 		making a copy.
@@ -851,6 +866,121 @@ abstract Vector<T>(IVector<T>)
 		}
 	}
 
+	public inline function push2(value1:Bool, value2:Bool):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			return untyped __cpp__("{0}->push({1}, {2})", __array, __hx_tmp1, __hx_tmp2);
+			#else
+			__array.push(value1);
+			return __array.push(value2);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push3(value1:Bool, value2:Bool, value3:Bool):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			return untyped __cpp__("{0}->push({1}, {2}, {3})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			return __array.push(value3);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push4(value1:Bool, value2:Bool, value3:Bool, value4:Bool):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			return __array.push(value4);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push5(value1:Bool, value2:Bool, value3:Bool, value4:Bool, value5:Bool):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			return __array.push(value5);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push6(value1:Bool, value2:Bool, value3:Bool, value4:Bool, value5:Bool, value6:Bool):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			var __hx_tmp6 = value6;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5}, {6})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5, __hx_tmp6);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			__array.push(value5);
+			return __array.push(value6);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
 	public function removeAt(index:Int):Bool
 	{
 		if (!fixed || index < __array.length)
@@ -1097,6 +1227,121 @@ abstract Vector<T>(IVector<T>)
 		if (!fixed)
 		{
 			return __array.push(x);
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push2(value1:Float, value2:Float):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			return untyped __cpp__("{0}->push({1}, {2})", __array, __hx_tmp1, __hx_tmp2);
+			#else
+			__array.push(value1);
+			return __array.push(value2);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push3(value1:Float, value2:Float, value3:Float):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			return untyped __cpp__("{0}->push({1}, {2}, {3})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			return __array.push(value3);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push4(value1:Float, value2:Float, value3:Float, value4:Float):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			return __array.push(value4);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push5(value1:Float, value2:Float, value3:Float, value4:Float, value5:Float):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			return __array.push(value5);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push6(value1:Float, value2:Float, value3:Float, value4:Float, value5:Float, value6:Float):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			var __hx_tmp6 = value6;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5}, {6})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5, __hx_tmp6);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			__array.push(value5);
+			return __array.push(value6);
+			#end
 		}
 		else
 		{
@@ -1363,6 +1608,121 @@ abstract Vector<T>(IVector<T>)
 		}
 	}
 
+	public inline function push2(value1:Function, value2:Function):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			return untyped __cpp__("{0}->push({1}, {2})", __array, __hx_tmp1, __hx_tmp2);
+			#else
+			__array.push(value1);
+			return __array.push(value2);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push3(value1:Function, value2:Function, value3:Function):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			return untyped __cpp__("{0}->push({1}, {2}, {3})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			return __array.push(value3);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push4(value1:Function, value2:Function, value3:Function, value4:Function):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			return __array.push(value4);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push5(value1:Function, value2:Function, value3:Function, value4:Function, value5:Function):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			return __array.push(value5);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push6(value1:Function, value2:Function, value3:Function, value4:Function, value5:Function, value6:Function):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			var __hx_tmp6 = value6;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5}, {6})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5, __hx_tmp6);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			__array.push(value5);
+			return __array.push(value6);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
 	public function removeAt(index:Int):Function
 	{
 		if (!fixed || index < __array.length)
@@ -1601,6 +1961,121 @@ abstract Vector<T>(IVector<T>)
 		if (!fixed)
 		{
 			return __array.push(x);
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push2(value1:Int, value2:Int):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			return untyped __cpp__("{0}->push({1}, {2})", __array, __hx_tmp1, __hx_tmp2);
+			#else
+			__array.push(value1);
+			return __array.push(value2);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push3(value1:Int, value2:Int, value3:Int):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			return untyped __cpp__("{0}->push({1}, {2}, {3})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			return __array.push(value3);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push4(value1:Int, value2:Int, value3:Int, value4:Int):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			return __array.push(value4);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push5(value1:Int, value2:Int, value3:Int, value4:Int, value5:Int):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			return __array.push(value5);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push6(value1:Int, value2:Int, value3:Int, value4:Int, value5:Int, value6:Int):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			var __hx_tmp6 = value6;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5}, {6})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5, __hx_tmp6);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			__array.push(value5);
+			return __array.push(value6);
+			#end
 		}
 		else
 		{
@@ -1864,6 +2339,121 @@ abstract Vector<T>(IVector<T>)
 		}
 	}
 
+	public inline function push2(value1:T, value2:T):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			return untyped __cpp__("{0}->push({1}, {2})", __array, __hx_tmp1, __hx_tmp2);
+			#else
+			__array.push(value1);
+			return __array.push(value2);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push3(value1:T, value2:T, value3:T):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			return untyped __cpp__("{0}->push({1}, {2}, {3})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			return __array.push(value3);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push4(value1:T, value2:T, value3:T, value4:T):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			return __array.push(value4);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push5(value1:T, value2:T, value3:T, value4:T, value5:T):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			return __array.push(value5);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
+	public inline function push6(value1:T, value2:T, value3:T, value4:T, value5:T, value6:T):Int
+	{
+		if (!fixed)
+		{
+			#if (cpp && HXCPP_MULTI_PUSH)
+			var __hx_tmp1 = value1;
+			var __hx_tmp2 = value2;
+			var __hx_tmp3 = value3;
+			var __hx_tmp4 = value4;
+			var __hx_tmp5 = value5;
+			var __hx_tmp6 = value6;
+			return untyped __cpp__("{0}->push({1}, {2}, {3}, {4}, {5}, {6})", __array, __hx_tmp1, __hx_tmp2, __hx_tmp3, __hx_tmp4, __hx_tmp5, __hx_tmp6);
+			#else
+			__array.push(value1);
+			__array.push(value2);
+			__array.push(value3);
+			__array.push(value4);
+			__array.push(value5);
+			return __array.push(value6);
+			#end
+		}
+		else
+		{
+			return __array.length;
+		}
+	}
+
 	public function removeAt(index:Int):T
 	{
 		if (!fixed || index < __array.length)
@@ -1997,6 +2587,11 @@ abstract Vector<T>(IVector<T>)
 	public function lastIndexOf(x:T, from:Null<Int> = null):Int;
 	public function pop():Null<T>;
 	public function push(value:T):Int;
+	public function push2(value1:T, value2:T):Int;
+	public function push3(value1:T, value2:T, value3:T):Int;
+	public function push4(value1:T, value2:T, value3:T, value4:T):Int;
+	public function push5(value1:T, value2:T, value3:T, value4:T, value5:T):Int;
+	public function push6(value1:T, value2:T, value3:T, value4:T, value5:T, value6:T):Int;
 	public function removeAt(index:Int):T;
 	public function reverse():IVector<T>;
 	public function set(index:Int, value:T):T;
@@ -2115,6 +2710,66 @@ abstract Vector<T>(VectorData<T>) from VectorData<T>
 		if (!fixed)
 		{
 			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call")(this, x);
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push2(x:T, y:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call")(this, x, y);
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push3(x:T, y:T, z:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call")(this, x, y, z);
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push4(x:T, y:T, z:T, w:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call")(this, x, y, z, w);
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push5(x:T, y:T, z:T, w:T, v:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call")(this, x, y, z, w, v);
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push6(x:T, y:T, z:T, w:T, v:T, u:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call")(this, x, y, z, w, v, u);
 		}
 		else
 		{
@@ -2254,6 +2909,11 @@ abstract Vector<T>(VectorData<T>) from VectorData<T>
 			lastIndexOf: { value: p.lastIndexOf },
 			pop: { value: p.pop },
 			push: { value: p.push },
+			push2: { value: p.push2 },
+			push3: { value: p.push3 },
+			push4: { value: p.push4 },
+			push5: { value: p.push5 },
+			push6: { value: p.push6 },
 			removeAt: { value: p.removeAt },
 			set: { value: p.set },
 			shift: { value: p.shift },
@@ -2384,6 +3044,66 @@ abstract Vector<T>(VectorData<T>) from VectorData<T>
 		if (!fixed)
 		{
 			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call (this, x)");
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push2(x:T, y:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call (this, x, y)");
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push3(x:T, y:T, z:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call(this, x, y, z)");
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push4(x:T, y:T, z:T, w:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call(this, x, y, z, w)");
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push5(x:T, y:T, z:T, w:T, v:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call(this, x, y, z, w, v)");
+		}
+		else
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("this").length;
+		}
+	}
+
+	public function push6(x:T, y:T, z:T, w:T, v:T, u:T):Int
+	{
+		if (!fixed)
+		{
+			return untyped #if haxe4 js.Syntax.code #else __js__ #end ("Array.prototype.push.call(this, x, y, z, w, v, u)");
 		}
 		else
 		{
@@ -2656,6 +3376,46 @@ abstract Vector<T>(VectorData<T>)
 	public inline function push(x:T):Int
 	{
 		return this.push(x);
+	}
+
+	public inline function push2(x:T, y:T):Int
+	{
+		this.push(x);
+		return this.push(y);
+	}
+
+	public inline function push3(x:T, y:T, z:T):Int
+	{
+		this.push(x);
+		this.push(y);
+		return this.push(z);
+	}
+
+	public inline function push4(x:T, y:T, z:T, w:T):Int
+	{
+		this.push(x);
+		this.push(y);
+		this.push(z);
+		return this.push(w);
+	}
+
+	public inline function push5(x:T, y:T, z:T, w:T, v:T):Int
+	{
+		this.push(x);
+		this.push(y);
+		this.push(z);
+		this.push(w);
+		return this.push(v);
+	}
+
+	public inline function push6(x:T, y:T, z:T, w:T, v:T, u:T):Int
+	{
+		this.push(x);
+		this.push(y);
+		this.push(z);
+		this.push(w);
+		this.push(v);
+		return this.push(u);
 	}
 
 	public function removeAt(index:Int):T
