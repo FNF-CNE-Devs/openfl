@@ -187,7 +187,7 @@ class Matrix
 
 		@param m The matrix to be concatenated to the source matrix.
 	**/
-	public function concat(m:Matrix):Void
+	public inline function concat(m:Matrix):Void
 	{
 		var a1 = a * m.a + b * m.c;
 		b = a * m.b + b * m.d;
@@ -272,7 +272,7 @@ class Matrix
 
 		@param	sourceMatrix	The Matrix object from which to copy the data.
 	**/
-	public function copyFrom(sourceMatrix:Matrix):Void
+	public inline function copyFrom(sourceMatrix:Matrix):Void
 	{
 		a = sourceMatrix.a;
 		b = sourceMatrix.b;
@@ -489,7 +489,7 @@ class Matrix
 
 		![Matrix class properties in matrix notation](/images/matrix_identity.jpg)
 	**/
-	public function identity():Void
+	public inline function identity():Void
 	{
 		a = 1;
 		b = 0;
@@ -560,7 +560,6 @@ class Matrix
 		**/
 
 		var cos = Math.cos(theta);
-
 		var sin = Math.sin(theta);
 
 		var a1 = a * cos - b * sin;
@@ -590,7 +589,7 @@ class Matrix
 		@param sx A multiplier used to scale the object along the _x_ axis.
 		@param sy A multiplier used to scale the object along the _y_ axis.
 	**/
-	public function scale(sx:Float, sy:Float):Void
+	public inline function scale(sx:Float, sy:Float):Void
 	{
 		/*
 
@@ -601,12 +600,12 @@ class Matrix
 			[  tx ty  1 ][  0   0   1 ]
 		**/
 
-		a *= sx;
-		b *= sy;
-		c *= sx;
-		d *= sy;
-		tx *= sx;
-		ty *= sy;
+		a = a * sx;
+		b = b * sy;
+		c = c * sx;
+		d = d * sy;
+		tx = tx * sx;
+		ty = ty * sy;
 
 		// __cleanValues ();
 	}
@@ -631,7 +630,7 @@ class Matrix
 		@param	txa
 		@param	tya
 	**/
-	public function setTo(a:Float, b:Float, c:Float, d:Float, tx:Float, ty:Float):Void
+	public inline function setTo(a:Float, b:Float, c:Float, d:Float, tx:Float, ty:Float):Void
 	{
 		this.a = a;
 		this.b = b;
@@ -695,8 +694,8 @@ class Matrix
 	**/
 	public inline function translate(dx:Float, dy:Float):Void
 	{
-		tx += dx;
-		ty += dy;
+		tx = tx + dx;
+		ty = ty + dy;
 	}
 
 	#if lime
